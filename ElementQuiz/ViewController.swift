@@ -15,6 +15,7 @@ enum Mode {
 enum State {
     case question
     case answer
+    case score
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -24,6 +25,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var currentElementIndex = 0
     var mode: Mode = .flashCard {
         didSet {
+            switch mode {
+            case .flashCard:
+                setupFlashCards()
+            case .quiz:
+                setupQuiz()
+            }
+            
             updateUI()
         }
     }
@@ -51,7 +59,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateUI()
     }
     @IBAction func next(_ sender: UIButton) {
-        currentElementIndex = (currentElementIndex+1) % elementList.count
+        currentElementIndex += 1
+        if currentElementIndex >= elementList.count {
+            currentElementIndex = 0
+            if mode == .quiz {
+                state = .score
+                updateUI()
+                return
+            }
+        }
         
         state = .question
         updateUI()
@@ -67,12 +83,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updateFlashCardUI(elementName: String) {
         textField.isHidden = true
         textField.resignFirstResponder()
+        modeSelector.selectedSegmentIndex = 0
         
         switch state {
         case .question:
             answerLabel.text = "?"
         case .answer:
             answerLabel.text = elementList[currentElementIndex]
+        case .score:
+            answerLabel.text = ""
         }
             
     }
@@ -80,11 +99,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updateQuizUI(elementName: String) {
         
         textField.isHidden = false
+        modeSelector.selectedSegmentIndex = 1
+        
         switch state {
         case .question:
             textField.text = ""
             textField.becomeFirstResponder()
         case .answer:
+            textField.resignFirstResponder()
+        case .score:
+            textField.isHidden = true
             textField.resignFirstResponder()
         }
 
@@ -97,6 +121,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 answerLabel.text = "❌"
             }
+        case .score:
+            answerLabel.text = ""
+        }
+        
+        if state == .score {
+            displayScoreAlert()
         }
     }
     
@@ -129,6 +159,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateUI()
         
         return true
+    }
+    
+    func setupFlashCards() {
+        state = .question
+        currentElementIndex = 0
+    }
+    
+    func setupQuiz() {
+        state = .question
+        currentElementIndex = 0
+        isAnswerCorrect = false
+        correctAnswerCount = 0
+    }
+    
+    func displayScoreAlert() {
+        let alert = UIAlertController(title: "Quiz Score", message: "Your score is \(correctAnswerCount) out of \(elementList.count).", preferredStyle: .alert)
+        
+        let dismissAlert = UIAlertAction(title: "Ok", style: .default, handler: scoreAlertDismissed(_:))
+        alert.addAction(dismissAlert)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func scoreAlertDismissed(_ action: UIAlertAction) {
+        mode = .flashCard
     }
 
 }
