@@ -18,10 +18,17 @@ enum State {
     case score
 }
 
+struct ChemicalElement {
+    let symbol: String
+    let name: String
+    let atomicWeight: Int
+    let imageName: String
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var elementImage: UIImageView!
-    let elementList = ["Carbon", "Gold", "Chlorine", "Sodium"]
+    var elementList = ["Carbon", "Gold", "Chlorine", "Sodium"]
     var currentElementIndex = 0
     var mode: Mode = .flashCard {
         didSet {
@@ -55,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        mode = .flashCard
         // Do any additional setup after loading the view.
         
     }
@@ -202,6 +209,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setupFlashCards() {
         state = .question
         currentElementIndex = 0
+        elementList.shuffle()
     }
     
     func setupQuiz() {
@@ -209,6 +217,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         currentElementIndex = 0
         isAnswerCorrect = false
         correctAnswerCount = 0
+        elementList.shuffle()
     }
     
     func displayScoreAlert() {
