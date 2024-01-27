@@ -41,6 +41,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isAnswerCorrect = false
     var correctAnswerCount = 0
     
+    
+    @IBOutlet weak var showAnswerButton: UIButton!
+    
+    @IBOutlet weak var nextElementButton: UIButton!
+    
     @IBOutlet weak var modeSelector: UISegmentedControl!
     
     @IBOutlet weak var textField: UITextField!
@@ -85,6 +90,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         modeSelector.selectedSegmentIndex = 0
         
+        showAnswerButton.isHidden = false
+        nextElementButton.isEnabled = true
+        nextElementButton.setTitle("Next element", for: .normal)
+        
         switch state {
         case .question:
             answerLabel.text = "?"
@@ -100,6 +109,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         textField.isHidden = false
         modeSelector.selectedSegmentIndex = 1
+        
+        showAnswerButton.isHidden = true
+        if currentElementIndex == elementList.count - 1 {
+            nextElementButton.setTitle("Show score", for: .normal)
+        } else {
+            nextElementButton.setTitle("Next element", for: .normal)
+        }
+        switch state {
+        case .question:
+            nextElementButton.isEnabled = false
+        case .answer:
+            nextElementButton.isEnabled = true
+        case .score:
+            nextElementButton.isEnabled = false
+        }
+        
+        textField.isHidden = false
+        switch state {
+        case .question:
+            textField.isEnabled = true
+            textField.text = ""
+            textField.becomeFirstResponder()
+        case .answer:
+            textField.isEnabled = false
+            textField.resignFirstResponder()
+        case .score:
+            textField.isHidden = true
+            textField.resignFirstResponder()
+        }
         
         switch state {
         case .question:
@@ -119,7 +157,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if isAnswerCorrect {
                 answerLabel.text = "Correct!"
             } else {
-                answerLabel.text = "❌"
+                answerLabel.text = "❌\nCorrect Answer:\n" + elementName
             }
         case .score:
             answerLabel.text = ""
