@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E1D25EAC-A4C1-49CA-BAEE-C44113FFC2F5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4325D047-048E-4541-A74A-E49C0605EA59"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElementQuiz/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - a4e93aa6f0557a0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.answerLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/ElementQuiz/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - 1982e830db53861f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.answerLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/ElementQuiz/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - acec9bbb56df1068"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.answerLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/ElementQuiz/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - 25726802d662f6fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.answerLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - cff3276d1d115cf3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ElementQuiz.ViewController"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/ElementQuiz/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "744">
+               </Location>
+               <Location
+                  uuid = "4325D047-048E-4541-A74A-E49C0605EA59 - c7f1d3bed21d2a56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElementQuiz.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ElementQuiz.ViewController&gt;"
+                  moduleName = "ElementQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guidelight/Documents/programming/IOSapp/elementQuiz/ElementQuiz/ElementQuiz/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

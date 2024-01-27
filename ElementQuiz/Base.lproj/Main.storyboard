@@ -52,12 +52,18 @@
                                     <segment title="Flash Cards"/>
                                     <segment title="Quiz"/>
                                 </segments>
+                                <connections>
+                                    <action selector="switchModes:" destination="BYZ-38-t0r" eventType="valueChanged" id="cul-Ua-eEZ"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pci-IE-Xad">
                                 <rect key="frame" x="126" y="401" width="140" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="W44-k0-Asg"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,7 +73,7 @@
                         <outlet property="answerLabel" destination="q8R-TO-tVt" id="jED-yl-qPC"/>
                         <outlet property="elementImage" destination="weh-4q-qBE" id="Wjs-8G-ZgR"/>
                         <outlet property="modeSelector" destination="CZE-79-Zfa" id="8lv-8H-5BD"/>
-                        <outlet property="textField" destination="8bC-Xf-vdC" id="qlG-FT-tCr"/>
+                        <outlet property="textField" destination="pci-IE-Xad" id="ruB-15-sXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
